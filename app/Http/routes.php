@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.master');
 });
 
 /*
@@ -29,3 +29,9 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+//Route::resource('homepage','HomepageController');
+//Route::controller('homepage','HomepageController');
+
+
+
