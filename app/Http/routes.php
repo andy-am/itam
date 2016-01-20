@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layout.master');
+    return view('homepage.index');
 });
 
 /*
@@ -26,12 +26,16 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
 
-//Route::resource('homepage','HomepageController');
-//Route::controller('homepage','HomepageController');
+Route::resource('homepage','HomepageController');
+Route::controller('homepage','HomepageController');
+
+Route::resource('blog','BlogController');
+Route::controller('blog','BlogController');
+
+Route::get('/contact', function(){
+    return view('homepage.contact');
+});
 
 
 

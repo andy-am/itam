@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HomepageController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('homepage.index');
+        $blogs = Blog::all();
+        return  view('blog.index')->with('blogs', $blogs);
     }
 
     /**
