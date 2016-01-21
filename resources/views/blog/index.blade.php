@@ -6,7 +6,15 @@
         <div class="blogHeader"><center><h1>Blog</h1></center></div>
         @foreach($blogs as $blog)
             <div class="col-md-12">
-                {{ $blog->title }}
+                <div class="blogTitle">
+                    {{ $blog->title }}
+                </div>
+                <div class="blogText">
+                    {{ $blog->slug }}
+                </div>
+                <div class="blogCreatedAt">
+                   <i class="fa fa-times"></i> {{ $blog->created_at }}
+                </div>
             </div>
         @endforeach
     </div>
