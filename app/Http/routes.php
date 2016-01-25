@@ -33,6 +33,14 @@ Route::controller('homepage','HomepageController');
 Route::resource('blog','BlogController');
 Route::controller('blog','BlogController');
 
+Route::get('administration/blog/addNewBlog','AdminController@addNewBlog');
+Route::get('administration/blog/showAllBlogs','AdminController@showAllBlogs');
+
+
+
+Route::resource('administration','AdminController');
+Route::controller('administration','AdminController');
+
 Route::get('/contact', function(){
     return view('homepage.contact');
 });
