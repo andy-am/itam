@@ -1,3 +1,5 @@
 $(document).ready(function() {
-    $('#example').DataTable();
+    $('#blogTable').DataTable({
+            select: true
+        });
 } );

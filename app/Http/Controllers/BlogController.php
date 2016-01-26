@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +51,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $blog = Blog::findOrFail($id);
+        return  view('blog.show')->with('blog', $blog);
     }
 
     /**

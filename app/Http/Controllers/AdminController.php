@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\Tests\Session\Flash;
 
 class AdminController extends Controller
 {
@@ -16,18 +18,48 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('administration.index');
+        return view('administration.blog.index');
     }
 
     public function addNewBlog()
     {
-        return view('administration.blog.index');
+        return "to do";
+    }
+
+    public function storeBlog(Request $request, $id)
+    {
+
+        return dd($request->all());
+    }
+
+    public function updateBlog(Request $request, $id)
+    {
+        //return dd($request->all());
+        $blog = Blog::findOrFail($id);
+
+        $blog->update( $request->all() );
+
+        $blog->session()->flash('alert-success', 'User was successful added!');
+        return redirect('/administration/blog/showAllBlogs');
+    }
+
+    public function deleteBlog(Request $request, $id)
+    {
+        return $request;
     }
 
     public function showAllBlogs()
     {
-        return view('administration.blog.show');
+        return view('administration.blog.showAllBlogs');
     }
+
+    public function showBlog($id)
+    {
+        $blog = Blog::findOrFail($id);
+        return view('administration.blog.showBlog')->with('blog', $blog);
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

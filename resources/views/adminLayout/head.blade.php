@@ -21,6 +21,7 @@
     <!-- Theme style -->
     <link href="/admin/css/AdminLTE.css" rel="stylesheet" type="text/css" />
     <link href="/admin/css/mainStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/bs/jq-2.1.4,dt-1.10.10/datatables.min.css"/>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,7 +31,10 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+
+    {{ Html::style('/admin/libs/bootstrap/css/bootstrap.min.css') }}
+    {{ Html::style('/admin/libs/DataTables/datatables.min.css') }}
+    {{ Html::style("/admin/libs/jquery-ui/jquery-ui.min.css") }}
+
     <![endif]-->
 </head>

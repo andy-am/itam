@@ -4,11 +4,11 @@
 
     <section class="content-header" xmlns="http://www.w3.org/1999/html">
         <h1>
-            Admin <small>Add new blog</small>
+            Admin <small>Show all blogs</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Add new blog</li>
+            <li class="active">Show all blogs</li>
         </ol>
     </section>
 
@@ -17,10 +17,15 @@
 @section('contentAdmin')
     <section class="content">
 
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
+        <div class="box box-solid">
+
+            <div class="box-body">
+
+
+            </div>
 
         </div>
 
     </section>
+
 @endsection

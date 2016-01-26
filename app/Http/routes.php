@@ -35,6 +35,9 @@ Route::controller('blog','BlogController');
 
 Route::get('administration/blog/addNewBlog','AdminController@addNewBlog');
 Route::get('administration/blog/showAllBlogs','AdminController@showAllBlogs');
+Route::get('administration/blog/{id}','AdminController@showBlog');
+Route::put('administration/blog/{id}','AdminController@updateBlog');
+
 
 
 
