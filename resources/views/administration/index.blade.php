@@ -11,7 +11,7 @@
                     <small>Control panel</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="/administration"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li class="active">Dashboard</li>
                 </ol>
             </section>
@@ -26,77 +26,42 @@
                         <div class="small-box bg-aqua">
                             <div class="inner">
                                 <h3>
-                                    150
+                                    {{ $A_blogs->count() }}
                                 </h3>
                                 <p>
-                                    New Orders
+                                   BLOGS
                                 </p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-bag"></i>
+                                <i class="fa fa-comments"></i>
                             </div>
-                            <a href="#" class="small-box-footer">
+                            <a href="/administration/blog/showAllBlogs" class="small-box-footer">
                                 More info <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
                     </div><!-- ./col -->
+
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
-                        <div class="small-box bg-green">
+                        <div class="small-box bg-teal">
                             <div class="inner">
                                 <h3>
-                                    53<sup style="font-size: 20px">%</sup>
+                                    {{ $A_newsletters->count() }}
                                 </h3>
                                 <p>
-                                    Bounce Rate
+                                    NEWSLETTER
                                 </p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
+                                <i class="ion ion-speakerphone"></i>
                             </div>
-                            <a href="#" class="small-box-footer">
+                            <a href="/administration/newsletter/showAllNewsletters" class="small-box-footer">
                                 More info <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
                     </div><!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-yellow">
-                            <div class="inner">
-                                <h3>
-                                    44
-                                </h3>
-                                <p>
-                                    User Registrations
-                                </p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-person-add"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">
-                                More info <i class="fa fa-arrow-circle-right"></i>
-                            </a>
-                        </div>
-                    </div><!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-red">
-                            <div class="inner">
-                                <h3>
-                                    65
-                                </h3>
-                                <p>
-                                    Unique Visitors
-                                </p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">
-                                More info <i class="fa fa-arrow-circle-right"></i>
-                            </a>
-                        </div>
-                    </div><!-- ./col -->
+
+
                 </div><!-- /.row -->
 
                 <!-- top row -->
@@ -515,6 +480,7 @@
                 </div><!-- /.row (main row) -->
 
             </section><!-- /.content -->
+
 
 
 @endsection

@@ -5,8 +5,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
 
-<script type="text/javascript" src="https://cdn.datatables.net/s/bs/jq-2.1.4,dt-1.10.10/datatables.min.js"></script>
-
 
 {{ Html::script("/admin/libs/DataTables/datatables.min.js") }}
 
@@ -18,8 +16,18 @@
 {{ Html::script("/admin/js/AdminLTE/app.js") }}
 
 
-
 {{ Html::script("/admin/js/main.js") }}
+{{ Html::script("/admin/js/notify.js") }}
+
+
+{{ Html::script("/admin/js/plugins/ckeditor/ckeditor.js") }}ň
+
+{{ Html::script("/admin/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}
+
+
+
+
+<!-- iCheck -->
 
 
 

@@ -35,6 +35,7 @@
                             ]) !!}
                         </div>
 
+
                         <div class="form-group col-md-12">
 
                             {!! Form::label('text', 'Text of Blog') !!}
@@ -45,6 +46,14 @@
                                 'placeholder' => 'Text of blog',
                                 'required' => 'true'
                             ]) !!}
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            @if ($blog->img)
+                            {{ Html::image('/images/upload/blog/'.$blog->img, 'alt', array( 'width' => 425, 'height' => 200, 'class'=>'hoverImg', 'data-img'=>$blog->img)) }}
+                            @else
+                                <i class="fa fa-unlink"></i>
+                            @endif
                         </div>
 
                         <div class="form-group col-md-6">

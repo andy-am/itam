@@ -25,6 +25,7 @@
                     <thead>
                     <tr>
                         <th data-class-name="priority" >#ID</th>
+                        <th>PIC</th>
                         <th>TITLE</th>
                         <th>SLUG</th>
                         <th>TEXT</th>
@@ -36,19 +37,26 @@
 
                     <tbody>
 
-                    @foreach($blogs as $blog)
+                    @foreach($A_blogs as $blog)
                         <tr>
                             <td>{{ $blog->id }}</td>
+                            <td> @if ($blog->img) {{ Html::image('/images/upload/blog/'.$blog->img, 'alt', array( 'width' => 15, 'height' => 15, 'class'=>'hoverImg', 'data-img'=>$blog->img)) }} @else <i class="fa fa-unlink"></i> @endif </td>
                             <td>{{ $blog->title }}</td>
                             <td>{{ $blog->slug }}</td>
                             <td>{{ str_limit($blog->text, 30) }}</td>
                             <td>{{ $blog->created_at }}</td>
                             <td>{{ $blog->updated_at }}</td>
                             <td>
+
                                 <a href="{{ url('/administration/blog/'.$blog->id) }}"><span class="label label-success" title="Edit"><i class="fa fa-pencil"></i></span></a>
-                                <a href="{{ url('') }}"><span class="label label-warning" title="Hide for users"><i class="fa fa-ban"></i></span></a>
+                                @if($blog->display == 1)
+                                    <a class="hideBlog" data-id="{{ $blog->id }}" href=""><span class="label label-warning" title="Hide for users"><i class="fa fa-eye"></i></span></a>
+                                @else
+                                    <a class="showBlog" data-id="{{ $blog->id }}" href=""><span class="label label-warning" title="Show for users"><i class="fa fa-eye-slash"></i></span></a>
+                                @endif
+
                                 <a href="{{ url('') }}"><span class="label label-info" title="Detail"><i class="fa fa-folder-open-o"></i></span></a>
-                                <a href="{{ url('') }}"><span class="label label-danger" title="Remove"><i class="fa fa-trash-o"></i></span></a>
+                                <a href="{{ url('/administration/blog/delete/'.$blog->id) }}"><span class="label label-danger" title="Remove"><i class="fa fa-trash-o"></i></span></a>
 
                                 {{-- <span class="label label-primary">Primary</span>
                                  <span class="label label-success">Success</span>

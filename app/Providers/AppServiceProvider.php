@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use App\Blog;
+use App\Newsletter;
+use App\Quotation;
+use App\Visit;
 use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,8 +16,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $blogs = Blog::all();
-        view()->share('blogs', $blogs);
+        //$v = Visit::all();
+
+        $A_blogs = Blog::all();
+        view()->share('A_blogs', $A_blogs);
+
+        $A_newsletters = Newsletter::all();
+        view()->share('A_newsletters', $A_newsletters);
+
+        $A_quotations = Quotation::all();
+        view()->share('A_quotations', $A_quotations);
+
     }
 
     /**

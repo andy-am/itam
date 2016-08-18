@@ -1,7 +1,18 @@
 @extends('layout.master')
 
 @section('content')
-    <h1>News</h1>
-    <div class="col-md-9">asda</div>
-    <div class="col-md-3">sda</div>
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+            <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">News</h1>
+                            <p>Website news</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use DB;
+use App\Quotation;
+use Illuminate\Pagination\Paginator;
 
 class HomepageController extends Controller
 {
+
+    public function roulette($countOfNums){
+
+        //return         // Quotation::findOrFail([])
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,12 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('homepage.index');
+        $blogs = Blog::paginate(10);
+        $quotations = Quotation::all()->random(2);
+
+        return view('homepage.index')->with("quotations", $quotations);
+
+
     }
 
     /**
@@ -48,7 +63,10 @@ class HomepageController extends Controller
      */
     public function show($id)
     {
-        //
+        $blog = Blog::findOrFail($id);
+
+
+        return view('blog.show')->with('blog',$blog);
     }
 
     /**

@@ -9,9 +9,10 @@
       <div class="row">
         <div class="main-slider">
           <div class="slide-text">
-            <h1>We Are Creative Nerds</h1>
-            <p>Boudin doner frankfurter pig. Cow shank bresaola pork loin tri-tip tongue venison pork belly meatloaf short loin landjaeger biltong beef ribs shankle chicken andouille.</p>
-            <a href="#" class="btn btn-common">SIGN UP</a>
+            <h1>O mne</h1>
+            <p>V prvom rade by som sa vám chcel predstaviť. Moje meno je Mgr. Andrej Májik. Mám {{ floor((time() - strtotime("1989-04-10")) / (60*60*24*365)) }} rokov.
+              Vyštudoval som aplikovanú informatiku.Už viac ako 7 rokov sa venujem webovým technológiam. Som zameraný hlavne na tworbu webov pomocou PHP(Laravel) a jQuery.</p>
+            {{--<a href="#" class="btn btn-common">SIGN UP</a>--}}
           </div>
           <img src="images/home/slider/hill.png" class="slider-hill" alt="slider image">
           <img src="images/home/slider/house.png" class="slider-house" alt="slider image">
@@ -122,8 +123,8 @@
         <div class="col-sm-12">
           <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
             <p><img src="images/home/clients.png" class="img-responsive" alt=""></p>
-            <h1 class="title">Happy Clients</h1>
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud </p>
+            <h1 class="title">{{Lang::get("homepage.spokojniKlienti")}}</h1>
+            <p>{{Lang::get("homepage.spokojniKlientiText")}}</p>
           </div>
           <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="col-xs-3 col-sm-2">

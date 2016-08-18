@@ -1,48 +1,73 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', function () {
-    return view('homepage.index');
-});
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Input;
 
 
-Route::resource('homepage','HomepageController');
-Route::controller('homepage','HomepageController');
+
+Route::get('/', 'HomepageController@index');
+
 
 Route::resource('blog','BlogController');
 Route::controller('blog','BlogController');
+Route::get('/blog', 'BlogController@index');
+
+
+Route::resource('portfolio','PortfolioController');
+Route::controller('portfolio','PortfolioController');
+Route::get('/portfolio', 'PortfolioController@index');
+
+////////////////////////////// ADMIN ////////////////////////////////
+
+
+////////////////////////// BLOG //////////////////////////////
 
 Route::get('administration/blog/addNewBlog','AdminController@addNewBlog');
+Route::post('administration/blog/storeNewBlog','AdminController@storeNewBlog');
 Route::get('administration/blog/showAllBlogs','AdminController@showAllBlogs');
 Route::get('administration/blog/{id}','AdminController@showBlog');
 Route::put('administration/blog/{id}','AdminController@updateBlog');
+Route::delete('administration/blog/delete/{id}', 'AdminController@deleteBlog');
+
+Route::post('administration/blog/hide/{id}','AdminController@doHideBlog');
+Route::post('administration/blog/show/{id}','AdminController@doShowBlog');
+
+////////////////////////// END BLOG //////////////////////////////
 
 
+////////////////////////// NEWSLETTER //////////////////////////////
 
+Route::get('administration/newsletter/addNewNewsletter','AdminController@addNewNewsletter');
+Route::post('administration/newsletter/storeNewNewsletter','AdminController@storeNewNewsletter');
+Route::get('administration/newsletter/showAllNewsletters','AdminController@showAllNewsletters');
+Route::get('administration/newsletter/{id}','AdminController@showNewsletter');
+Route::put('administration/newsletter/{id}','AdminController@updateNewsletter');
+Route::delete('administration/newsletter/delete/{id}', 'AdminController@deleteNewsletter');
+
+//////////////////////// END NEWSLETTER /////////////////////////////
+
+
+////////////////////////// QUOTATION //////////////////////////////
+
+Route::get('administration/quotation/addNewQuotation','AdminController@addNewQuotation');
+Route::post('administration/quotation/storeNewQuotation','AdminController@storeNewQuotation');
+Route::get('administration/quotation/showAllQuotation','AdminController@showAllQuotation');
+Route::get('administration/quotation/{id}','AdminController@showQuotation');
+Route::put('administration/quotation/{id}','AdminController@updateQuotation');
+Route::delete('administration/quotation/delete/{id}', 'AdminController@deleteQuotation');
+
+//////////////////////// END QUOTATION /////////////////////////////
+
+
+Route::get('administration/email/showEmails','AdminController@showEmails');
+
+Route::get('administration/account', 'AdminController@account');
 
 Route::resource('administration','AdminController');
 Route::controller('administration','AdminController');
+
+////////////////////////// END ADMIN ////////////////////////////
+
 
 Route::get('/contact', function(){
     return view('homepage.contact');
