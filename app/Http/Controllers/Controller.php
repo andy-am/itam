@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
+use App\Newsletter;
+use App\Quotation;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http;
+
 
 class Controller extends BaseController
 {
@@ -21,5 +25,9 @@ class Controller extends BaseController
 
         $A_quotations = Quotation::all();
         view()->share('A_quotations', $A_quotations);
+
+        $quotations = Quotation::all()->random(2);
+        view()->share('quotations', $quotations);
+
     }
 }

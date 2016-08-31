@@ -32,28 +32,28 @@
         <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
           <div class="single-service">
             <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-              <img src="images/home/icon1.png" alt="">
+              <img src="http://static1.squarespace.com/static/55916c9fe4b0f356a27adc38/559d035ce4b02629e8b00b79/559d18b3e4b0271a54aed4a7/1436358836048/laravel-1.png" alt="">
             </div>
-            <h2>Incredibly Responsive</h2>
-            <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+            <h2>Framework Laravel >= 5.2 </h2>
+            <p>Jeden z najlepších a najpoužívanejších frameworkrov za posledné roky. Skúsenosti s týmto frameworkom mám už dlhšie ako <strong> {{ floor((strtotime("now") - strtotime('2015-10-15 00:00:00')) / ((60 * 60 * 24 * 30))) }} </strong> mesiacov.</p>
           </div>
         </div>
         <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
           <div class="single-service">
             <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-              <img src="images/home/icon2.png" alt="">
+              <img src="http://www.icone-png.com/png/52/52460.png" alt="">
             </div>
-            <h2>Superior Typography</h2>
-            <p>Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.</p>
+            <h2>jQuery</h2>
+            <p>jQuery je jedna z najznámejších knižníc javascriptu, pomocou ktorej "rozhýbem" Váš nový web. S jQuery mám skúsenosti cca <strong> {{ floor((strtotime("now") - strtotime('2013-01-01 00:00:00')) / ((60 * 60 * 24 * 30))) }} </strong> mesiacov.</p>
           </div>
         </div>
         <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
           <div class="single-service">
             <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-              <img src="images/home/icon3.png" alt="">
+              <img src="http://www.pngall.com/wp-content/uploads/2016/04/Database-PNG-1.png" alt="">
             </div>
-            <h2>Swift Page Builder</h2>
-            <p>Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.</p>
+            <h2>Databáza</h2>
+            <p>Neoddeliteľná súčasť dnešných projektov. Slúži ako úložisko vaších dát. Skúsenosti s databázami mám <strong> {{ floor((strtotime("now") - strtotime('2015-10-15 00:00:00')) / ((60 * 60 * 24 * 30))) }} </strong> mesiacov. </p>
           </div>
         </div>
       </div>

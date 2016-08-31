@@ -26,10 +26,10 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::paginate(10);
-        $quotations = Quotation::all()->random(2);
+        //$blogs = Blog::paginate(10);
+        //$quotations = Quotation::all()->random(2);
 
-        return view('homepage.index')->with("quotations", $quotations);
+        return view('homepage.index');// ->with("quotations", $quotations);
 
 
     }

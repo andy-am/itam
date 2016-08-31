@@ -8,13 +8,13 @@
                 <div class="testimonial bottom">
                     <h2>{{Lang::get("quotations.quotations")}}</h2>
 
-                    @foreach($A_quotations as $quotation)
+                    @foreach($quotations as $quotation)
                         <div class="media">
                             <div class="pull-left">
                                 <a href="#"><img src="/images/home/profile1.png" alt=""></a>
                             </div>
                             <div class="media-body">
-                                <blockquote> {{ $quotation->text }} </blockquote>
+                                <blockquote>{{ $quotation->text }}</blockquote>
                                 <h3><a href="#">- {{ $quotation->author }} </a></h3>
                             </div>
                         </div>
