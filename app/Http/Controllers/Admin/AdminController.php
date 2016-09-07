@@ -37,11 +37,11 @@ class AdminController extends Controller
     public function doShowNewsletter($id)
     {
         $newsletter = Newsletter::findOrFail($id);
-        $newsletter->display = 1;
+        $newsletter->active = 1;
         if($newsletter->save()){
-            return response()->json(['error' => false, 'message' => 'Blog display has been changed on show. ' ]);
+            return response()->json(['error' => false, 'message' => 'Blog active has been changed on show. ' ]);
         }else{
-            return response()->json(['id' => $id, 'message' => 'Blog display has not been changed']);
+            return response()->json(['id' => $id, 'message' => 'Blog active has not been changed']);
         }
 
     }
@@ -49,11 +49,11 @@ class AdminController extends Controller
     public function doHideNewsletter($id)
     {
         $newsletter = Newsletter::findOrFail($id);
-        $newsletter->display = 0;
+        $newsletter->active = 0;
         if($newsletter->save()){
-            return response()->json(['error' => false, 'message'=>'Blog display has been changed on hide. ' ]);
+            return response()->json(['error' => false, 'message'=>'Blog active has been changed on hide. ' ]);
         }else{
-            return response()->json(['id' => $id, 'message' => 'Blog display has not been changed']);
+            return response()->json(['id' => $id, 'message' => 'Blog active has not been changed']);
         }
     }
 
@@ -119,11 +119,11 @@ class AdminController extends Controller
     public function doShowQuotation($id)
     {
         $quotation = Quotation::findOrFail($id);
-        $quotation->display = 1;
+        $quotation->active = 1;
         if($quotation->save()){
-            return response()->json(['error' => false, 'message' => 'Quotation display has been changed on show. ' ]);
+            return response()->json(['error' => false, 'message' => 'Quotation active has been changed on show. ' ]);
         }else{
-            return response()->json(['id' => $id, 'message' => 'Quotation display has not been changed']);
+            return response()->json(['id' => $id, 'message' => 'Quotation active has not been changed']);
         }
 
     }
@@ -131,11 +131,11 @@ class AdminController extends Controller
     public function doHideQuotation($id)
     {
         $quotation = Quotation::findOrFail($id);
-        $quotation->display = 0;
+        $quotation->active = 0;
         if($quotation->save()){
-            return response()->json(['error' => false, 'message'=>'Quotation display has been changed on hide. ' ]);
+            return response()->json(['error' => false, 'message'=>'Quotation active has been changed on hide. ' ]);
         }else{
-            return response()->json(['id' => $id, 'message' => 'Quotation display has not been changed']);
+            return response()->json(['id' => $id, 'message' => 'Quotation active has not been changed']);
         }
     }
 
@@ -203,11 +203,11 @@ class AdminController extends Controller
     public function doShowBlog($id)
     {
         $blog = Blog::findOrFail($id);
-        $blog->display = 1;
+        $blog->active = 1;
         if($blog->save()){
-            return response()->json(['error' => false, 'message' => 'Blog display has been changed on show. ' ]);
+            return response()->json(['error' => false, 'message' => 'Blog active has been changed on show. ' ]);
         }else{
-            return response()->json(['id' => $id, 'message' => 'Blog display has not been changed']);
+            return response()->json(['id' => $id, 'message' => 'Blog active has not been changed']);
         }
 
     }
@@ -215,11 +215,11 @@ class AdminController extends Controller
     public function doHideBlog($id)
     {
         $blog = Blog::findOrFail($id);
-        $blog->display = 0;
+        $blog->active = 0;
         if($blog->save()){
-            return response()->json(['error' => false, 'message'=>'Blog display has been changed on hide. ' ]);
+            return response()->json(['error' => false, 'message'=>'Blog active has been changed on hide. ' ]);
         }else{
-            return response()->json(['id' => $id, 'message' => 'Blog display has not been changed']);
+            return response()->json(['id' => $id, 'message' => 'Blog active has not been changed']);
         }
     }
 
