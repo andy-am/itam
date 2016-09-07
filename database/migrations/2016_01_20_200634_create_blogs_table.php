@@ -18,7 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('slug', 50);
             $table->string('text', 10000);
             $table->string('img', 1000);
-            $table->tinyInteger('display')->default(1);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

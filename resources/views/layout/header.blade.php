@@ -31,6 +31,8 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
+
+                    @if(Auth::check()) <li class="active"><a href="{{URL::to("/administration")}}"> BACKEND </a></li>@endif
                     <li class="active"><a href="/">Domov</a></li>
                     <li class="dropdown"><a href="#">Stránky <i class="fa fa-angle-down"></i></a>
                         {{--<ul role="menu" class="sub-menu">

@@ -17,6 +17,7 @@ class CreateQuotationsTable extends Migration
             $table->string('author', 1000);
             $table->string('text', 1000);
             $table->string('img', 10000);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateNewslettersTable extends Migration
             $table->string('title', 150);
             $table->text('text', 1000);
             $table->string('img', 1000);
-            $table->tinyInteger('flag')->default(0);
+            $table->boolean('active')->default(1);
             $table->timestamp('sent_at');
             $table->timestamps();
 

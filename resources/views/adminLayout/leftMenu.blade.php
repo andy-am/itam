@@ -8,7 +8,7 @@
                 <img src="/images/admin/img/avatar3.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Hello, Andrej</p>
+                <p>Ahoj {{ Auth::user()->nick_name }}</p>
 
                 <a href="/"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
