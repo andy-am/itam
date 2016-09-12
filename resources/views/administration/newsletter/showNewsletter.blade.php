@@ -22,7 +22,7 @@
             <div class="box-body">
                 <div class="row">
 
-                    {{ Form::model($newsletter, ['action' => ['AdminController@updateNewsletter', $newsletter->id], 'method' => 'put']) }}
+                    {{ Form::model($newsletter, ['action' => ['Admin\AdminController@updateNewsletter', $newsletter->id], 'method' => 'put']) }}
 
                         <div class="form-group col-md-6">
 

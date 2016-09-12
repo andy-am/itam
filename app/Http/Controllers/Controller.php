@@ -26,7 +26,8 @@ class Controller extends BaseController
         $A_quotations = Quotation::all();
         view()->share('A_quotations', $A_quotations);
 
-        $quotations = Quotation::all()->random(2);
+        $quotations = Quotation::all();
+        $quotations = (count($quotations) > 1) ? $quotations->random(2) : $quotations;
         view()->share('quotations', $quotations);
 
     }

@@ -22,7 +22,7 @@
             <div class="box-body">
                 <div class="row">
 
-                    {{ Form::model($quotation, ['action' => ['AdminController@updateQuotation', $quotation->id], 'method' => 'put']) }}
+                    {{ Form::model($quotation, ['action' => ['Admin\AdminController@updateQuotation', $quotation->id], 'method' => 'put']) }}
 
                         <div class="form-group col-md-6">
 
@@ -50,7 +50,7 @@
 
                         <div class="form-group col-md-12">
                             @if ($quotation->img)
-                            {{ Html::image('/images/upload/quotation/'.$quotation->img, 'alt', array( 'width' => 425, 'height' => 200, 'class'=>'hoverImg', 'data-img'=>$quotation->img)) }}
+                            {{ Html::image('/upload/quotations/'.$quotation->img, 'alt', array( 'width' => 425, 'height' => 200, 'class'=>'hoverImg', 'data-img'=>$quotation->img)) }}
                             @else
                                 <i class="fa fa-unlink"></i>
                             @endif

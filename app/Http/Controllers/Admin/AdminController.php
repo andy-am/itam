@@ -73,9 +73,9 @@ class AdminController extends Controller
             $days = date("Ymd");
             $secs = date("His", strtotime('+1 hour'));
             $imgName = "newsletter_id_".$id."_".$days."_".$secs.".".$extension;
-            $path = base_path() . '/public/images/upload/';
+            $path = public_path() . '/upload/newsletters';
             $image = $request->file('img');
-            $request->file('img')->move( $path.'/blog/', $imgName);
+            $request->file('img')->move( $path, $imgName);
             $image = Newsletter::find($id);
             $image->img = $imgName;
             $image->save();
@@ -149,16 +149,16 @@ class AdminController extends Controller
     {
         $quotation = new Quotation();
         $id = $quotation->create($request->all())->id;
-        var_dump($id);die();
+        //var_dump($id);die();
         if($request->hasFile('img')){
 
             $extension = $request->file('img')->getClientOriginalExtension();
             $days = date("Ymd");
             $secs = date("His", strtotime('+1 hour'));
             $imgName = "quotation_id_".$id."_".$days."_".$secs.".".$extension;
-            $path = base_path() . '/public/images/upload/';
+            $path = public_path() . '/upload/quotations';
             $image = $request->file('img');
-            $request->file('img')->move( $path.'/quotation/', $imgName);
+            $request->file('img')->move( $path, $imgName);
             $image = Quotation::find($id);
             $image->img = $imgName;
             $image->save();
@@ -217,7 +217,7 @@ class AdminController extends Controller
         $blog = Blog::findOrFail($id);
         $blog->active = 0;
         if($blog->save()){
-            return response()->json(['error' => false, 'message'=>'Blog active has been changed on hide. ' ]);
+            return response()->json(['error' => false, 'message'=>'Blog active has been changed on hide.' ]);
         }else{
             return response()->json(['id' => $id, 'message' => 'Blog active has not been changed']);
         }
@@ -239,9 +239,9 @@ class AdminController extends Controller
             $days = date("Ymd");
             $secs = date("His", strtotime('+1 hour'));
             $imgName = "blog_id_".$id."_".$days."_".$secs.".".$extension;
-            $path = base_path() . '/public/images/upload/';
+            $path = public_path() . '/upload/blogs';
             $image = $request->file('img');
-            $request->file('img')->move( $path.'/blog/', $imgName);
+            $request->file('img')->move( $path, $imgName);
             $image = Blog::find($id);
             $image->img = $imgName;
             $image->save();

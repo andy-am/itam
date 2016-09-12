@@ -51,7 +51,7 @@ class UserController extends Controller
                     ->withErrors($validator)
                     ->withInput();
             } else {
-                return Redirect::to('user/login')->withInput()->withErrors([
+                return Redirect::to('user/login')->withErrors([
                     'credentials' => 'These credentials do not match our records.',
                 ]);
                 //return Redirect::to('user/login');

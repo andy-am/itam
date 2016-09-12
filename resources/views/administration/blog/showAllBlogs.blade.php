@@ -40,7 +40,7 @@
                     @foreach($A_blogs as $blog)
                         <tr>
                             <td>{{ $blog->id }}</td>
-                            <td> @if ($blog->img) {{ Html::image('/images/upload/blog/'.$blog->img, 'alt', array( 'width' => 15, 'height' => 15, 'class'=>'hoverImg', 'data-img'=>$blog->img)) }} @else <i class="fa fa-unlink"></i> @endif </td>
+                            <td> @if ($blog->img) {{ Html::image('/upload/blogs/'.$blog->img, 'alt', array( 'width' => 15, 'height' => 15, 'class'=>'hoverImg', 'data-img'=>$blog->img)) }} @else <i class="fa fa-unlink"></i> @endif </td>
                             <td>{{ $blog->title }}</td>
                             <td>{{ $blog->slug }}</td>
                             <td>{{ str_limit($blog->text, 30) }}</td>
@@ -49,7 +49,7 @@
                             <td>
 
                                 <a href="{{ url('/administration/blog/'.$blog->id) }}"><span class="label label-success" title="Edit"><i class="fa fa-pencil"></i></span></a>
-                                @if($blog->display == 1)
+                                @if($blog->active == 1)
                                     <a class="hideBlog" data-id="{{ $blog->id }}" href=""><span class="label label-warning" title="Hide for users"><i class="fa fa-eye"></i></span></a>
                                 @else
                                     <a class="showBlog" data-id="{{ $blog->id }}" href=""><span class="label label-warning" title="Show for users"><i class="fa fa-eye-slash"></i></span></a>

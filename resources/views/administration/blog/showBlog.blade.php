@@ -22,7 +22,7 @@
             <div class="box-body">
                 <div class="row">
 
-                    {{ Form::model($blog, ['action' => ['AdminController@updateBlog', $blog->id], 'method' => 'put']) }}
+                    {{ Form::model($blog, ['action' => ['Admin\AdminController@updateBlog', $blog->id], 'method' => 'put']) }}
 
                         <div class="form-group col-md-6">
 
@@ -50,7 +50,7 @@
 
                         <div class="form-group col-md-12">
                             @if ($blog->img)
-                            {{ Html::image('/images/upload/blog/'.$blog->img, 'alt', array( 'width' => 425, 'height' => 200, 'class'=>'hoverImg', 'data-img'=>$blog->img)) }}
+                            {{ Html::image('/upload/blogs/'.$blog->img, 'alt', array( 'width' => 425, 'height' => 200, 'class'=>'hoverImg', 'data-img'=>$blog->img)) }}
                             @else
                                 <i class="fa fa-unlink"></i>
                             @endif

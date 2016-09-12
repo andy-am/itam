@@ -2,6 +2,8 @@
 
 
 Route::group(['middleware' => 'web'], function() {
+    Route::post('contact/sendUsEmail', 'FrontendController@sendUsEmail');
+
 
     Route::get('/', 'HomepageController@index');
 
@@ -10,6 +12,8 @@ Route::group(['middleware' => 'web'], function() {
     Route::resource('blog','BlogController');
     Route::controller('blog','BlogController');
     Route::get('/blog', 'BlogController@index');
+
+
 
 
     Route::resource('portfolio','PortfolioController');
@@ -50,7 +54,7 @@ Route::group(['middleware' => 'web'], function() {
             Route::post('administration/newsletter/storeNewNewsletter', 'AdminController@storeNewNewsletter');
             Route::get('administration/newsletter/showAllNewsletters', 'AdminController@showAllNewsletters');
             Route::get('administration/newsletter/{id}', 'AdminController@showNewsletter');
-            Route::put('administration/newsletter/{id}', 'AdminController@updateNewsletter');
+            Route::post('administration/newsletter/{id}', 'AdminController@updateNewsletter');
             Route::delete('administration/newsletter/delete/{id}', 'AdminController@deleteNewsletter');
 
             //////////////////////// END NEWSLETTER /////////////////////////////
@@ -62,7 +66,7 @@ Route::group(['middleware' => 'web'], function() {
             Route::post('administration/quotation/storeNewQuotation', 'AdminController@storeNewQuotation');
             Route::get('administration/quotation/showAllQuotation', 'AdminController@showAllQuotation');
             Route::get('administration/quotation/{id}', 'AdminController@showQuotation');
-            Route::put('administration/quotation/{id}', 'AdminController@updateQuotation');
+            Route::post('administration/quotation/{id}', 'AdminController@updateQuotation');
             Route::delete('administration/quotation/delete/{id}', 'AdminController@deleteQuotation');
 
             //////////////////////// END QUOTATION /////////////////////////////

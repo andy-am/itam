@@ -5,58 +5,71 @@
                 <img src="/images/home/under.png" class="img-responsive inline" alt="">
             </div>
             <div class="col-md-4 col-sm-6">
-                <div class="testimonial bottom">
-                    <h2>{{Lang::get("quotations.quotations")}}</h2>
-
-                    @foreach($quotations as $quotation)
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#"><img src="/images/home/profile1.png" alt=""></a>
+                @if(count($quotations) > 0)
+                    <div class="testimonial bottom">
+                        <h2>Citáty</h2>
+                        @foreach($quotations as $quotation)
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img src="/images/home/profile1.png" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <blockquote>{{ $quotation->text }}</blockquote>
+                                    <h3><a href="#">- {{ $quotation->author }} </a></h3>
+                                </div>
                             </div>
-                            <div class="media-body">
-                                <blockquote>{{ $quotation->text }}</blockquote>
-                                <h3><a href="#">- {{ $quotation->author }} </a></h3>
-                            </div>
-                        </div>
-                    @endforeach
-
-                 </div>
+                        @endforeach
+                     </div>
+                @endif
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="contact-info bottom">
-                    <h2>{{ Lang::get('footer.contact') }}</h2>
-                    <address>
-                        E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br>
-                        Phone: +1 (123) 456 7890 <br>
-                        Fax: +1 (123) 456 7891 <br>
-                    </address>
 
-                    <h2>{{ Lang::get('footer.address') }}</h2>
-                    <address>
-                        Unit C2, St.Vincent's Trading Est., <br>
-                        Feeder Road, <br>
-                        Bristol, BS2 0UY <br>
-                        United Kingdom <br>
-                    </address>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-8 col-sm-12">
                 <div class="contact-form bottom">
-                    <h2>{{ Lang::get('footer.sendAMessage') }}</h2>
-                    <form id="main-contact-form" name="contact-form" method="post" action="">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" required="required" placeholder="Meno">
+                    <h2>Pošlite nám email</h2>
+                    @if( $errors->first('emailWasSent') ) <h1>{{ $errors->first('emailWasSent') }} </h1> @endif
+
+                    {{ Form::open(['url' => ['contact/sendUsEmail'], 'method' => 'post']) }}
+
+
+                        <div class="form-group @if($errors->first('name')) has-error @endif">
+                            {!! Form::text('name', null, [
+                                'class' => 'form-control',
+                                'placeholder' => 'Meno',
+                            ]) !!}
+                            <span class="help-block">
+                                {{ $errors->first('name') }}
+                            </span>
                         </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+
+                        <div class="form-group @if($errors->first('email')) has-error @endif">
+                            {!! Form::text('email', null, [
+                                'class' => 'form-control',
+                                'placeholder' => 'Email',
+                            ]) !!}
+                            <span class="help-block ">
+                                {{ $errors->first('email') }}
+                            </span>
                         </div>
-                        <div class="form-group">
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Správa..."></textarea>
+
+                        <div class="form-group @if($errors->first('message')) has-error @endif">
+                            {!! Form::textarea('message', null, [
+                                'class' => 'form-control',
+                                'placeholder' => 'Správa'
+                            ]) !!}
+                            <span class="help-block">
+                                {{ $errors->first('message') }}
+                            </span>
                         </div>
+
                         <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-submit" value="Odošli">
+
+                            {!! Form::button('<i class="glyphicon glyphicon-ok-circle"></i> Odošli', [
+                                'type' => 'submit',
+                                'class' => 'btn btn-submit',
+                            ]) !!}
                         </div>
-                    </form>
+
+                        {{ Form::close() }}
                 </div>
             </div>
             <div class="col-sm-12">

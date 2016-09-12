@@ -1,3 +1,6 @@
+app = {};
+app.token = $('meta[name="csrf-token"]').attr('content');
+
 $(document).ready(function() {
     $('#blogTable').DataTable({
             select: true
@@ -18,7 +21,7 @@ $(document).on('click', '.hideBlog', function () {
     $.ajax({
         method:'POST',
         url:'/administration/blog/hide/' + id,
-        data: {id:id},
+        data: {id:id, _token:app.token},
         success:function(result) {
             $this.attr('class','showBlog');
             $this.find('i').attr('class','fa fa-eye-slash');
@@ -45,7 +48,7 @@ $(document).on('click', '.showBlog', function () {
     $.ajax({
         method:'POST',
         url:'/administration/blog/show/' + id,
-        data: {id:id},
+        data: {id:id, _token:app.token},
         success:function(result) {
             $this.attr('class','hideBlog');
             $this.find('i').attr('class','fa fa-eye');
