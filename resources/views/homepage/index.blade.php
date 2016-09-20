@@ -14,11 +14,12 @@
               Vyštudoval som aplikovanú informatiku.Už viac ako 7 rokov sa venujem webovým technológiam. Som zameraný hlavne na tworbu webov pomocou PHP(Laravel) a jQuery.</p>
             {{--<a href="#" class="btn btn-common">SIGN UP</a>--}}
           </div>
-          <img src="images/home/slider/hill.png" class="slider-hill" alt="slider image">
+          {{--<img src="images/home/slider/hill.png" class="slider-hill" alt="slider image">
           <img src="images/home/slider/house.png" class="slider-house" alt="slider image">
           <img src="images/home/slider/sun.png" class="slider-sun" alt="slider image">
           <img src="images/home/slider/birds1.png" class="slider-birds1" alt="slider image">
-          <img src="images/home/slider/birds2.png" class="slider-birds2" alt="slider image">
+          <img src="images/home/slider/birds2.png" class="slider-birds2" alt="slider image">--}}
+          <img src="http://www.clipartbest.com/cliparts/aie/K6z/aieK6zK4T.png" class="slider-hill" alt="slider image">
         </div>
       </div>
     </div>
@@ -67,12 +68,12 @@
         <div class="row">
           <div class="action take-tour">
             <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-              <h1 class="title">Triangle Corporate Template</h1>
-              <p>A responsive, retina-ready &amp; wide multipurpose template.</p>
+              <h1 class="title">Novinky</h1>
+              <p>Novinky, týkajúce sa stránky </p>
             </div>
             <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
               <div class="tour-button">
-                <a href="#" class="btn btn-common">TAKE THE TOUR</a>
+                <a href="/news" class="btn btn-common">Čítaj viac noviniek...</a>
               </div>
             </div>
           </div>
@@ -85,6 +86,7 @@
   <section id="features">
     <div class="container">
       <div class="row">
+
         <div class="single-features">
           <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
             <img src="images/home/image1.png" class="img-responsive" alt="">
@@ -94,6 +96,7 @@
             <P>Pork belly leberkas cow short ribs capicola pork loin. Doner fatback frankfurter jerky meatball pastrami bacon tail sausage. Turkey fatback ball tip, tri-tip tenderloin drumstick salami strip steak.</P>
           </div>
         </div>
+
         <div class="single-features">
           <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
             <h2>Built for the Responsive Web</h2>
@@ -117,12 +120,12 @@
   </section>
   <!--/#features-->
 
-  <section id="clients">
+  {{--<section id="clients">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-            <p><img src="images/home/clients.png" class="img-responsive" alt=""></p>
+            --}}{{--<p><img src="images/home/clients.png" class="img-responsive" alt=""></p>--}}{{--
             <h1 class="title">{{Lang::get("homepage.spokojniKlienti")}}</h1>
             <p>{{Lang::get("homepage.spokojniKlientiText")}}</p>
           </div>
@@ -149,5 +152,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>--}}
 @endsection

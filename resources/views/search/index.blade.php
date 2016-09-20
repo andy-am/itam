@@ -6,13 +6,7 @@
 </head>
 <body>
 
-Od: {{ $data['from'] }}
-<br/>
-Meno: {{ $data['name'] }}
-<br/>
-Správa: {{ $data['message'] }}
-
-
+{{ dd($data) }}
 
 </body>
 </html>

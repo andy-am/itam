@@ -34,14 +34,14 @@
                                 <img class="img-responsive" src="/images/404.png" alt="">
                             </div>
                         </div>
-                        <h2>{{ Lang::get('404.notFound') }}</h2>
-                        <p>{{ Lang::get('404.infoSentence') }}</p>
-                        <a href="index.html" class="btn btn-error">{{ Lang::get('404.returnToHomepage') }}</a>
-                        <div class="social-link">
+                        <h2>STRÁNKA NEEXISTUJE</h2>
+                        <p>Stráka, ktorú hĺadáte je pravdepodbne zmeneá alebo vymazaná.</p>
+                        <a href="/" class="btn btn-error">SPÄŤ NA DOMOVSKÚ STRÁNKU</a>
+                        {{--<div class="social-link">
                             <span><a href="#"><i class="fa fa-facebook"></i></a></span>
                             <span><a href="#"><i class="fa fa-twitter"></i></a></span>
                             <span><a href="#"><i class="fa fa-google-plus"></i></a></span>
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>

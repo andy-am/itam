@@ -7,22 +7,19 @@ Route::group(['middleware' => 'web'], function() {
 
     Route::get('/', 'HomepageController@index');
 
-    Route::get('user/login', 'UserController@login');
+    Route::get('/contact', function(){
+        return view('homepage.contact');
+    });
+    Route::get('/search', 'FrontendController@search');
+
 
     Route::resource('blog','BlogController');
     Route::controller('blog','BlogController');
     Route::get('/blog', 'BlogController@index');
 
-
-
-
     Route::resource('portfolio','PortfolioController');
     Route::controller('portfolio','PortfolioController');
     Route::get('/portfolio', 'PortfolioController@index');
-
-    Route::get('/contact', function(){
-        return view('homepage.contact');
-    });
 
     Route::get('user/login', 'UserController@login');
     Route::get('user/logout', 'UserController@doLogout');
@@ -35,49 +32,49 @@ Route::group(['middleware' => 'web'], function() {
 
             ////////////////////////// BLOG //////////////////////////////
 
-            Route::get('administration/blog/addNewBlog', 'AdminController@addNewBlog');
-            Route::post('administration/blog/storeNewBlog', 'AdminController@storeNewBlog');
-            Route::get('administration/blog/showAllBlogs', 'AdminController@showAllBlogs');
-            Route::get('administration/blog/{id}', 'AdminController@showBlog');
-            Route::put('administration/blog/{id}', 'AdminController@updateBlog');
-            Route::delete('administration/blog/delete/{id}', 'AdminController@deleteBlog');
+            Route::get('administration/blog/addNewBlog', 'BlogController@addNewBlog');
+            Route::post('administration/blog/storeNewBlog', 'BlogController@storeNewBlog');
+            Route::get('administration/blog/showAllBlogs', 'BlogController@showAllBlogs');
+            Route::get('administration/blog/{id}', 'BlogController@showBlog');
+            Route::put('administration/blog/{id}', 'BlogController@updateBlog');
+            Route::delete('administration/blog/delete/{id}', 'BlogController@deleteBlog');
 
-            Route::post('administration/blog/hide/{id}', 'AdminController@doHideBlog');
-            Route::post('administration/blog/show/{id}', 'AdminController@doShowBlog');
+            Route::post('administration/blog/hide/{id}', 'BlogController@doHideBlog');
+            Route::post('administration/blog/show/{id}', 'BlogController@doShowBlog');
 
             ////////////////////////// END BLOG //////////////////////////////
 
 
             ////////////////////////// NEWSLETTER //////////////////////////////
 
-            Route::get('administration/newsletter/addNewNewsletter', 'AdminController@addNewNewsletter');
-            Route::post('administration/newsletter/storeNewNewsletter', 'AdminController@storeNewNewsletter');
-            Route::get('administration/newsletter/showAllNewsletters', 'AdminController@showAllNewsletters');
-            Route::get('administration/newsletter/{id}', 'AdminController@showNewsletter');
-            Route::post('administration/newsletter/{id}', 'AdminController@updateNewsletter');
-            Route::delete('administration/newsletter/delete/{id}', 'AdminController@deleteNewsletter');
+            Route::get('administration/newsletter/addNewNewsletter', 'NewsletterController@addNewNewsletter');
+            Route::post('administration/newsletter/storeNewNewsletter', 'NewsletterController@storeNewNewsletter');
+            Route::get('administration/newsletter/showAllNewsletters', 'NewsletterController@showAllNewsletters');
+            Route::get('administration/newsletter/{id}', 'NewsletterController@showNewsletter');
+            Route::post('administration/newsletter/{id}', 'NewsletterController@updateNewsletter');
+            Route::delete('administration/newsletter/delete/{id}', 'NewsletterController@deleteNewsletter');
 
             //////////////////////// END NEWSLETTER /////////////////////////////
 
 
             ////////////////////////// QUOTATION //////////////////////////////
 
-            Route::get('administration/quotation/addNewQuotation', 'AdminController@addNewQuotation');
-            Route::post('administration/quotation/storeNewQuotation', 'AdminController@storeNewQuotation');
-            Route::get('administration/quotation/showAllQuotation', 'AdminController@showAllQuotation');
-            Route::get('administration/quotation/{id}', 'AdminController@showQuotation');
-            Route::post('administration/quotation/{id}', 'AdminController@updateQuotation');
-            Route::delete('administration/quotation/delete/{id}', 'AdminController@deleteQuotation');
+            Route::get('administration/quotation/addNewQuotation', 'QuotationController@addNewQuotation');
+            Route::post('administration/quotation/storeNewQuotation', 'QuotationController@storeNewQuotation');
+            Route::get('administration/quotation/showAllQuotation', 'QuotationController@showAllQuotation');
+            Route::get('administration/quotation/{id}', 'QuotationController@showQuotation');
+            Route::post('administration/quotation/{id}', 'QuotationController@updateQuotation');
+            Route::delete('administration/quotation/delete/{id}', 'QuotationController@deleteQuotation');
 
             //////////////////////// END QUOTATION /////////////////////////////
 
 
-            Route::get('administration/email/showEmails', 'AdminController@showEmails');
+            Route::get('administration/email/showEmails', 'EmailController@showEmails');
 
-            Route::get('administration/account', 'AdminController@account');
+            Route::get('administration/account', 'BaseController@account');
 
-            Route::resource('administration', 'AdminController');
-            Route::controller('administration', 'AdminController');
+            //Route::resource('administration', 'AdminController');
+            //Route::controller('administration', 'AdminController');
 
 
         });

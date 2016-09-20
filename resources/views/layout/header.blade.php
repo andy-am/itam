@@ -73,8 +73,7 @@
                 <form role="form">
                     <i class="fa fa-search"></i>
                     <div class="field-toggle">
-                        <input type="text" class="search-form" autocomplete="off
-                        " placeholder="Search something">
+                        <input type="text" class="search-form" placeholder="Hľadaj...">
                     </div>
                 </form>
             </div>

@@ -79,12 +79,12 @@
   }
 
   .btn-common {
-    font-size: 14px;
+    font-size: 18px;
     color: #0099ae;
     border: 1px solid #0099ae;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    padding: 10px 25px;
+    /*font-weight: 300;*/
+    padding: 15px 40px;
   }
 
   #action .col-sm-5{

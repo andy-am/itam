@@ -74,7 +74,7 @@
             </div>
             <div class="col-sm-12">
                 <div class="copyright-text text-center">
-                    <p>&copy; {{ Lang::get('footer.copyright') }} Andrej Májik 2016. All Rights Reserved.</p>
+                    <p>&copy; Andrej Májik 2016.</p>
                     <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a> <a href="{{ url('/administration') }}" title="Administration" class="fa fa-lock"></a> </p>
                 </div>
             </div>

@@ -21,8 +21,8 @@
         <div class="container">
             <div class="row">
                 <ul class="portfolio-filter text-center">
-                    <li><a class="btn btn-default active" href="#" {{--data-filter="*"--}}>My Websites</a></li>
-                    {{--<li><a class="btn btn-default" href="#" data-filter=".branded">Branded</a></li>
+                    <li><a class="btn btn-default active" href="#" data-filter="*">PROJEKTY</a></li>
+                 {{--   <li><a class="btn btn-default" href="#" data-filter=".branded">Branded</a></li>
                     <li><a class="btn btn-default" href="#" data-filter=".design">Design</a></li>
                     <li><a class="btn btn-default" href="#" data-filter=".folio">Folio</a></li>
                     <li><a class="btn btn-default" href="#" data-filter=".logos">Logos</a></li>
