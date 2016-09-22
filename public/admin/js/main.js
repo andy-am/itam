@@ -14,16 +14,17 @@ $('.hoverImg').hover(function(){
 
 });
 
-$(document).on('click', '.hideBlog', function () {
+$(document).on('click', '.hideForUser', function () {
     event.preventDefault();
     var $this = $(this);
     var id = $(this).data('id');
+    var type = $(this).attr('data-type');
     $.ajax({
         method:'POST',
-        url:'/administration/blog/hide/' + id,
+        url:'/administration/'+type+'/hide/' + id,
         data: {id:id, _token:app.token},
         success:function(result) {
-            $this.attr('class','showBlog');
+            $this.attr('class','showForUser');
             $this.find('i').attr('class','fa fa-eye-slash');
             $this.find('span').attr('tittle','Hide for users');
             $this.attr('id',id);
@@ -41,16 +42,17 @@ $(document).on('click', '.hideBlog', function () {
     });
 });
 
-$(document).on('click', '.showBlog', function () {
+$(document).on('click', '.showForUser', function () {
     event.preventDefault();
     var $this = $(this);
     var id = $(this).data('id');
+    var type = $(this).attr('data-type');
     $.ajax({
         method:'POST',
-        url:'/administration/blog/show/' + id,
+        url:'/administration/'+type+'/show/' + id,
         data: {id:id, _token:app.token},
         success:function(result) {
-            $this.attr('class','hideBlog');
+            $this.attr('class','hideForUser');
             $this.find('i').attr('class','fa fa-eye');
             $this.find('span').attr('tittle','Show for users');
             $this.attr('id',id);

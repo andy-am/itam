@@ -44,6 +44,20 @@ Route::group(['middleware' => 'web'], function() {
 
             ////////////////////////// END BLOG //////////////////////////////
 
+            ////////////////////////// AUTHOR //////////////////////////////
+
+            Route::get('administration/author/addNewAuthor', 'AuthorController@addNewAuthor');
+            Route::post('administration/author/storeNewAuthor', 'AuthorController@storeNewAuthor');
+            Route::get('administration/author/showAllAuthors', 'AuthorController@showAllAuthors');
+            Route::get('administration/author/{id}', 'AuthorController@showAuthor');
+            Route::put('administration/author/{id}', 'AuthorController@updateAuthor');
+            Route::delete('administration/author/delete/{id}', 'AuthorController@deleteAuthor');
+
+            Route::post('administration/author/hide/{id}', 'AuthorController@doHideAuthor');
+            Route::post('administration/author/show/{id}', 'AuthorController@doShowAuthor');
+
+            ////////////////////////// END AUTHOR //////////////////////////////
+
 
             ////////////////////////// NEWSLETTER //////////////////////////////
 

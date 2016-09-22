@@ -19,6 +19,8 @@ class CreateAuthorTable extends Migration
             $table->string('middle_name', 50);
             $table->string('last_name', 50);
             $table->string('image', 255);
+            $table->string('motto', 500);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

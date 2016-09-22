@@ -29,11 +29,14 @@
 
                         {!! Form::label('Author of Quotation', 'Name of author') !!}
 
-                        {!! Form::text('author', null, [
-                            'class' => 'form-control',
-                            'placeholder' => 'Name of author',
-                            'required' => 'true'
-                        ]) !!}
+
+                        <select name="author_id" class="form-control">
+                            <option value="">Prosím vyberte autora</option>
+                            @foreach($authors as $author)
+                                <option value="{{ $author->id }}">{{ $author->first_name . " " .$author->middle_name . " " . $author->last_name }}</option>
+                            @endforeach
+                        </select>
+
                     </div>
 
                     <div class="form-group col-md-12">
@@ -49,10 +52,10 @@
                     </div>
 
 
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         {!! Form::label('Image') !!}
                         {!! Form::file('img', null) !!}
-                    </div>
+                    </div>--}}
 
                     <div class="form-group col-md-12">
                         {!! Form::button('<i class="glyphicon glyphicon-ok-circle"></i> Save', [

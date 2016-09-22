@@ -21,7 +21,7 @@
 
             <div class="box-body">
 
-                <table id="blogTable" class="table table-striped table-hover" data-page-length='10' cellspacing="0" width="100%">
+                <table id="authorTable" class="table table-striped table-hover" data-page-length='10' cellspacing="0" width="100%">
                     <thead>
                     <tr>
                         <th data-class-name="priority" >#ID</th>
@@ -37,26 +37,26 @@
 
                     <tbody>
 
-                    @foreach($A_blogs as $blog)
+                    @foreach($A_authors as $author)
                         <tr>
-                            <td>{{ $blog->id }}</td>
-                            <td> @if ($blog->img) {{ Html::image('/upload/blogs/'.$blog->img, 'alt', array( 'width' => 15, 'height' => 15, 'class'=>'hoverImg', 'data-img'=>$blog->img)) }} @else <i class="fa fa-unlink"></i> @endif </td>
-                            <td>{{ $blog->title }}</td>
-                            <td>{{ $blog->slug }}</td>
-                            <td>{{ str_limit($blog->text, 30) }}</td>
-                            <td>{{ $blog->created_at }}</td>
-                            <td>{{ $blog->updated_at }}</td>
+                            <td>{{ $author->id }}</td>
+                            <td> @if ($author->img) {{ Html::image('/upload/authors/'.$author->img, 'alt', array( 'width' => 15, 'height' => 15, 'class'=>'hoverImg', 'data-img'=>$author->img)) }} @else <i class="fa fa-unlink"></i> @endif </td>
+                            <td>{{ $author->title }}</td>
+                            <td>{{ $author->slug }}</td>
+                            <td>{{ str_limit($author->text, 30) }}</td>
+                            <td>{{ $author->created_at }}</td>
+                            <td>{{ $author->updated_at }}</td>
                             <td>
 
-                                <a href="{{ url('/administration/blog/'.$blog->id) }}"><span class="label label-success" title="Edit"><i class="fa fa-pencil"></i></span></a>
-                                @if($blog->active == 1)
-                                    <a class="hideForUser" data-type="blog" data-id="{{ $blog->id }}" href=""><span class="label label-warning" title="Hide for users"><i class="fa fa-eye"></i></span></a>
+                                <a href="{{ url('/administration/author/'.$author->id) }}"><span class="label label-success" title="Edit"><i class="fa fa-pencil"></i></span></a>
+                                @if($author->active == 1)
+                                    <a class="hideForUser" data-type="author" data-id="{{ $author->id }}" href=""><span class="label label-warning" title="Hide for users"><i class="fa fa-eye"></i></span></a>
                                 @else
-                                    <a class="showForUser" data-type="blog" data-id="{{ $blog->id }}" href=""><span class="label label-warning" title="Show for users"><i class="fa fa-eye-slash"></i></span></a>
+                                    <a class="showForUser" data-type="author" data-id="{{ $author->id }}" href=""><span class="label label-warning" title="Show for users"><i class="fa fa-eye-slash"></i></span></a>
                                 @endif
 
                                 <a href="{{ url('') }}"><span class="label label-info" title="Detail"><i class="fa fa-folder-open-o"></i></span></a>
-                                <a href="{{ url('/administration/blog/delete/'.$blog->id) }}"><span class="label label-danger" title="Remove"><i class="fa fa-trash-o"></i></span></a>
+                                <a href="{{ url('/administration/author/delete/'.$author->id) }}"><span class="label label-danger" title="Remove"><i class="fa fa-trash-o"></i></span></a>
 
                                 {{-- <span class="label label-primary">Primary</span>
                                  <span class="label label-success">Success</span>

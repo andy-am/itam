@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Author;
 use App\Blog;
 use App\Newsletter;
 use App\Quotation;
@@ -40,15 +41,17 @@ class QuotationController extends Controller
 
     public function addNewQuotation()
     {
-        return view('administration.quotation.addNewQuotation');
+        $authors = Author::all();
+        return view('administration.quotation.addNewQuotation')->with('authors', $authors);;
     }
 
     public function storeNewQuotation(Request $request)
     {
         $quotation = new Quotation();
+        //dd($request->all());
         $id = $quotation->create($request->all())->id;
         //var_dump($id);die();
-        if($request->hasFile('img')){
+       /* if($request->hasFile('img')){
 
             $extension = $request->file('img')->getClientOriginalExtension();
             $days = date("Ymd");
@@ -60,9 +63,9 @@ class QuotationController extends Controller
             $image = Quotation::find($id);
             $image->img = $imgName;
             $image->save();
-        }
+        }*/
 
-        //return redirect('/administration/quotation/showAllQuotation');
+        return redirect('/administration/quotation/showAllQuotation');
 
     }
 

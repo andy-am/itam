@@ -20,8 +20,7 @@ class CreateQuotationsTable extends Migration
             $table->text('text', 1000);
             $table->boolean('active')->default(1);
             $table->timestamps();
-            $table->rememberToken();
-            $table->foreign("author_id")->references("id")->on("authors")->onUpdate("cascade")->onDelete("set null")->onUpdate("cascade");
+            $table->foreign("author_id")->references("id")->on("authors")->onUpdate("cascade")->onDelete("cascade");
         });
     }
 

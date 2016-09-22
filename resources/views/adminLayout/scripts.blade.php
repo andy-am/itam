@@ -20,7 +20,7 @@
 {{ Html::script("/admin/js/notify.js") }}
 
 
-{{ Html::script("/admin/js/plugins/ckeditor/ckeditor.js") }}ň
+{{ Html::script("/admin/js/plugins/ckeditor/ckeditor.js") }}
 
 {{ Html::script("/admin/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}
 

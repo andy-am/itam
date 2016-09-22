@@ -25,7 +25,6 @@
     <![endif]-->
 </head>
 <body class="bg-black">
-<a href="{{ URL::to('user/logout') }}">Logout</a>
 <div class="form-box" id="login-box">
     <div class="header">Prihlásenie</div>
     <form action="{{URL::to('user/doLogin')}}" method="post">

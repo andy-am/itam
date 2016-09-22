@@ -91,6 +91,19 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-comments"></i>
+                    <span>Autor </span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                    <small class="badge pull-right bg-red">{{ $A_authors->count()}}</small>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url("/administration/author/addNewAuthor")}}"><i class="fa fa-angle-double-right"></i>Pridať Nového Autora</a></li>
+                    <li><a href="{{url("/administration/author/showAllAuthors")}}"><i class="fa fa-angle-double-right"></i>Zobraziť Authorov</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-comments"></i>
                     <span>Blog </span>
                     <i class="fa fa-angle-left pull-right"></i>
                     <small class="badge pull-right bg-red">{{ $A_blogs->count()}}</small>

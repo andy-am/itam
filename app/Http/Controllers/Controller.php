@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Author;
 use App\Newsletter;
 use App\Quotation;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -17,6 +18,10 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function __construct(){
+
+        $A_authors = Author::all();
+        view()->share('A_authors', $A_authors);
+
         $A_blogs = Blog::all();
         view()->share('A_blogs', $A_blogs);
 
