@@ -42,16 +42,7 @@
                     <span>FRONTEND </span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-rss"></i>
-                    <span>Novinky </span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('') }}"><i class="fa fa-angle-double-right"></i> Pridať novinku</a></li>
-                </ul>
-            </li>
+
 
             <li class="treeview">
                 <a href="#">
@@ -60,7 +51,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('') }}"><i class="fa fa-angle-double-right"></i> Visits</a></li>
+                    <li><a href="{{ url('/administration/visits') }}"><i class="fa fa-angle-double-right"></i> Visits</a></li>
                 </ul>
             </li>
 
@@ -88,14 +79,25 @@
 
             <li class="treeview">
                 <a href="#">
+                    <i class="fa fa-rss"></i>
+                    <span>Novinky </span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('') }}"><i class="fa fa-angle-double-right"></i> Pridať novinku</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
                     <i class="fa fa-comments"></i>
                     <span>Blog </span>
                     <i class="fa fa-angle-left pull-right"></i>
                     <small class="badge pull-right bg-red">{{ $A_blogs->count()}}</small>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url("/administration/blog/addNewBlog")}}"><i class="fa fa-angle-double-right"></i>Add New Blog</a></li>
-                    <li><a href="{{url("/administration/blog/showAllBlogs")}}"><i class="fa fa-angle-double-right"></i>Show Blogs</a></li>
+                    <li><a href="{{url("/administration/blog/addNewBlog")}}"><i class="fa fa-angle-double-right"></i>Pridať Nový Blog</a></li>
+                    <li><a href="{{url("/administration/blog/showAllBlogs")}}"><i class="fa fa-angle-double-right"></i>Zobraziť Blogy</a></li>
                 </ul>
             </li>
 
@@ -107,8 +109,8 @@
                     <small class="badge pull-right bg-red">{{ $A_newsletters->count()}}</small>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url("/administration/newsletter/addNewNewsletter")}}"><i class="fa fa-angle-double-right"></i>Add New Newsletter</a></li>
-                    <li><a href="{{url("/administration/newsletter/showAllNewsletters")}}"><i class="fa fa-angle-double-right"></i>Show Newsletter</a></li>
+                    <li><a href="{{url("/administration/newsletter/addNewNewsletter")}}"><i class="fa fa-angle-double-right"></i>Pridať Nový Newsletter</a></li>
+                    <li><a href="{{url("/administration/newsletter/showAllNewsletters")}}"><i class="fa fa-angle-double-right"></i>Zobraziť Newslettery</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -119,8 +121,8 @@
                     <small class="badge pull-right bg-red">{{ $A_quotations->count() }}</small>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url("/administration/quotation/addNewQuotation")}}"><i class="fa fa-angle-double-right"></i>Add New Quotation</a></li>
-                    <li><a href="{{url("/administration/quotation/showAllQuotation")}}"><i class="fa fa-angle-double-right"></i>Show Quotation</a></li>
+                    <li><a href="{{url("/administration/quotation/addNewQuotation")}}"><i class="fa fa-angle-double-right"></i>Pridať Nový citát</a></li>
+                    <li><a href="{{url("/administration/quotation/showAllQuotation")}}"><i class="fa fa-angle-double-right"></i>Zobraziť Citáty</a></li>
                 </ul>
             </li>
 

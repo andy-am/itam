@@ -27,11 +27,11 @@
 
                     <div class="form-group col-md-6">
 
-                        {!! Form::label('Title of blog', 'Name of storage') !!}
+                        {!! Form::label('text', 'Title of blog') !!}
 
                         {!! Form::text('title', null, [
                             'class' => 'form-control',
-                            'placeholder' => 'Name of storage',
+                            'placeholder' => 'Title of blog',
                             'required' => 'true'
                         ]) !!}
                     </div>

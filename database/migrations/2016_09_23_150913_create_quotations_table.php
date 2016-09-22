@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewslettersTable extends Migration
+class CreateQuotationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,16 @@ class CreateNewslettersTable extends Migration
      */
     public function up()
     {
-        Schema::create('newsletters', function (Blueprint $table) {
-            Schema::dropIfExists('newsletters');
-            $table->increments('id');
-            $table->string('title', 150);
-            $table->text('text', 1000);
-            $table->string('img', 1000);
-            $table->boolean('active')->default(1);
-            $table->timestamp('sent_at');
-            $table->timestamps();
 
+        Schema::create('quotations', function (Blueprint $table) {
+            Schema::dropIfExists('quotations');
+            $table->increments('id');
+            $table->integer('author_id')->unsigned();
+            $table->text('text', 1000);
+            $table->boolean('active')->default(1);
+            $table->timestamps();
+            $table->rememberToken();
+            $table->foreign("author_id")->references("id")->on("authors")->onUpdate("cascade")->onDelete("set null")->onUpdate("cascade");
         });
     }
 
@@ -32,6 +32,6 @@ class CreateNewslettersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('newsletters');
+        Schema::drop('quotations');
     }
 }

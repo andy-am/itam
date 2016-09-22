@@ -13,6 +13,7 @@ class CreateVisitsTable extends Migration
     public function up()
     {
         Schema::create('visits', function (Blueprint $table) {
+            Schema::dropIfExists('visits');
             $table->increments('id');
             $table->string('browser', 100)->nullable();
             $table->string('city', 100)->nullable();

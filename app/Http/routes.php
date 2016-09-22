@@ -73,6 +73,14 @@ Route::group(['middleware' => 'web'], function() {
 
             Route::get('administration/account', 'BaseController@account');
 
+            Route::get('administration', 'BaseController@index');
+            Route::get('administration/visits', 'BaseController@visits');
+            Route::get('administration/chart/getVisitsDaysLastMonth', 'BaseController@getVisitsDaysLastMonth');
+            Route::get('administration/chart/getVisitsMonthsLastYear', 'BaseController@getVisitsMonthsLastYear');
+            Route::get('administration/chart/getVisitsOfLastWeek', 'BaseController@getVisitsOfLastWeek');
+
+
+
             //Route::resource('administration', 'AdminController');
             //Route::controller('administration', 'AdminController');
 

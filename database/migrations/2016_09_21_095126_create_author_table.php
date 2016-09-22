@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuotationsTable extends Migration
+class CreateAuthorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,13 @@ class CreateQuotationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('quotations', function (Blueprint $table) {
+        Schema::create('authors', function (Blueprint $table) {
+            Schema::dropIfExists('authors');
             $table->increments('id');
-            $table->string('author', 1000);
-            $table->string('text', 1000);
-            $table->string('img', 10000);
-            $table->boolean('active')->default(1);
+            $table->string('first_name', 50);
+            $table->string('middle_name', 50);
+            $table->string('last_name', 50);
+            $table->string('image', 255);
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateQuotationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('quotations');
+        Schema::drop('authors');
     }
 }

@@ -18,14 +18,14 @@ class AppServiceProvider extends ServiceProvider
     {
         //$v = Visit::all();
 
-        $A_blogs = Blog::all();
+        /*$A_blogs = Blog::all();
         view()->share('A_blogs', $A_blogs);
 
         $A_newsletters = Newsletter::all();
         view()->share('A_newsletters', $A_newsletters);
 
         $A_quotations = Quotation::all();
-        view()->share('A_quotations', $A_quotations);
+        view()->share('A_quotations', $A_quotations);*/
 
     }
 

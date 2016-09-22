@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
+use App\Visit;
 use App\Quotation;
 use Illuminate\Pagination\Paginator;
 
@@ -24,13 +25,19 @@ class HomepageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //$blogs = Blog::paginate(10);
-        //$quotations = Quotation::all()->random(2);
+        $data = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        $visit = new Visit;
+        $visit->browser = $request->server('HTTP_USER_AGENT');
+        $visit->city = $data['city'];
+        $visit->country = $data['country'];
+        $visit->country_code = $data['countryCode'];
+        $visit->continent = "CONTINENT";
+        $visit->continent_code = "CONTINENT_CODE";
+        $visit->save();
 
         return view('homepage.index');// ->with("quotations", $quotations);
-
 
     }
 

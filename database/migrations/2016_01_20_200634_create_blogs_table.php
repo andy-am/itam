@@ -13,6 +13,7 @@ class CreateBlogsTable extends Migration
     public function up()
     {
         Schema::create('blogs', function (Blueprint $table) {
+            Schema::dropIfExists('blogs');
             $table->increments('id');
             $table->string('title', 100);
             $table->string('slug', 50);
