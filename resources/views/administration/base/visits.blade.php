@@ -164,7 +164,7 @@
             labels: ['Počet ľudí'],
             grid: true,
             xLabelFormat: function(x) {
-                var days = {'0':'Pondelok','1':'Utorok','2':'Streda','3':'Štvrtok','4':'Piatok','5':'Sobota','6':'Nedela'}
+                var days = {'0':'Nedeľa','1':'Pondelok','2':'Utorok','3':'Streda','4':'Štvrtok','5':'Piatok','6':'Sobota'}
 
                 var day = days[x.label];
                 return day;

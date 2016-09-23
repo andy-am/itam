@@ -91,7 +91,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
-                    <span>Autor </span>
+                    <span>Autori </span>
                     <i class="fa fa-angle-left pull-right"></i>
                     <small class="badge pull-right bg-red">{{ $A_authors->count()}}</small>
                 </a>
@@ -100,11 +100,23 @@
                     <li><a href="{{url("/administration/author/showAllAuthors")}}"><i class="fa fa-angle-double-right"></i>Zobraziť Authorov</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-comments"></i>
+                    <span>Projekty </span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                    <small class="badge pull-right bg-red">{{ $A_projects->count()}}</small>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url("/administration/project/addNewProject")}}"><i class="fa fa-angle-double-right"></i>Pridať Nový projekt</a></li>
+                    <li><a href="{{url("/administration/project/showAllProjects")}}"><i class="fa fa-angle-double-right"></i>Zobraziť projekty</a></li>
+                </ul>
+            </li>
 
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-comments"></i>
-                    <span>Blog </span>
+                    <span>Blogy </span>
                     <i class="fa fa-angle-left pull-right"></i>
                     <small class="badge pull-right bg-red">{{ $A_blogs->count()}}</small>
                 </a>
@@ -117,7 +129,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="ion ion-speakerphone"></i>
-                    <span>Newsletter </span>
+                    <span>Newslettery </span>
                     <i class="fa fa-angle-left pull-right"></i>
                     <small class="badge pull-right bg-red">{{ $A_newsletters->count()}}</small>
                 </a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Author;
 use App\Newsletter;
+use App\Project;
 use App\Quotation;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -21,6 +22,9 @@ class Controller extends BaseController
 
         $A_authors = Author::all();
         view()->share('A_authors', $A_authors);
+
+        $A_projects = Project::all();
+        view()->share('A_projects', $A_projects);
 
         $A_blogs = Blog::all();
         view()->share('A_blogs', $A_blogs);

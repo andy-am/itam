@@ -44,6 +44,20 @@ Route::group(['middleware' => 'web'], function() {
 
             ////////////////////////// END BLOG //////////////////////////////
 
+            ////////////////////////// PROJECT //////////////////////////////
+
+            Route::get('administration/project/addNewProject', 'ProjectController@addNewProject');
+            Route::post('administration/project/storeNewProject', 'ProjectController@storeNewProject');
+            Route::get('administration/project/showAllProjects', 'ProjectController@showAllProjects');
+            Route::get('administration/project/{id}', 'ProjectController@showProject');
+            Route::put('administration/project/{id}', 'ProjectController@updateProject');
+            Route::delete('administration/project/delete/{id}', 'ProjectController@deleteProject');
+
+            Route::post('administration/project/hide/{id}', 'ProjectController@doHideProject');
+            Route::post('administration/project/show/{id}', 'ProjectController@doShowProject');
+
+            ////////////////////////// END PROJECT //////////////////////////////
+
             ////////////////////////// AUTHOR //////////////////////////////
 
             Route::get('administration/author/addNewAuthor', 'AuthorController@addNewAuthor');
