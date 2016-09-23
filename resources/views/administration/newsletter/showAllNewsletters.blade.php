@@ -49,11 +49,11 @@
                             <td>
 
                                 <a href="{{ url('/administration/newsletter/'.$newsletter->id) }}"><span class="label label-success" title="Edit"><i class="fa fa-pencil"></i></span></a>
-                                {{--@if($newsletter->display == 1)
-                                    <a class="hideBlog" data-id="{{ $newsletter->id }}" href=""><span class="label label-warning" title="Hide for users"><i class="fa fa-eye"></i></span></a>
+                                @if($newsletter->active == 1)
+                                    <a class="hideForUser" data-type="newsletter" data-id="{{ $newsletter->id }}" href=""><span class="label label-warning" title="Hide for users"><i class="fa fa-eye"></i></span></a>
                                 @else
-                                    <a class="showBlog" data-id="{{ $newsletter->id }}" href=""><span class="label label-warning" title="Show for users"><i class="fa fa-eye-slash"></i></span></a>
-                                @endif--}}
+                                    <a class="showForUser" data-type="newsletter" data-id="{{ $newsletter->id }}" href=""><span class="label label-warning" title="Show for users"><i class="fa fa-eye-slash"></i></span></a>
+                                @endif
 
                                 <a href="{{ url('/') }}"><span class="label label-info" title="Detail"><i class="fa fa-folder-open-o"></i></span></a>
                                 <a href="{{ url('/administration/newsletter/delete/'.$newsletter->id) }}"><span class="label label-danger" title="Remove"><i class="fa fa-trash-o"></i></span></a>

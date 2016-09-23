@@ -90,7 +90,7 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-comments"></i>
+                    <i class="fa fa-users"></i>
                     <span>Autor </span>
                     <i class="fa fa-angle-left pull-right"></i>
                     <small class="badge pull-right bg-red">{{ $A_authors->count()}}</small>

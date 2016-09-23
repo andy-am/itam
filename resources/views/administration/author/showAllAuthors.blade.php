@@ -25,13 +25,11 @@
                     <thead>
                     <tr>
                         <th data-class-name="priority" >#ID</th>
-                        <th>PIC</th>
-                        <th>TITLE</th>
-                        <th>SLUG</th>
+                        <th>IMAGE</th>
                         <th>TEXT</th>
-                        <th>CREATE AT</th>
-                        <th>UPDATE AT</th>
-                        <th>ACTIONS</th>
+                        <th>VYTVORENÉ</th>
+                        <th>UPADATOVANÉ</th>
+                        <th>AKCIE</th>
                     </tr>
                     </thead>
 
@@ -40,9 +38,7 @@
                     @foreach($A_authors as $author)
                         <tr>
                             <td>{{ $author->id }}</td>
-                            <td> @if ($author->img) {{ Html::image('/upload/authors/'.$author->img, 'alt', array( 'width' => 15, 'height' => 15, 'class'=>'hoverImg', 'data-img'=>$author->img)) }} @else <i class="fa fa-unlink"></i> @endif </td>
-                            <td>{{ $author->title }}</td>
-                            <td>{{ $author->slug }}</td>
+                            <td> @if ($author->image) {{ Html::image('/upload/authors/'.$author->image, 'alt', array( 'width' => 15, 'height' => 15, 'class'=>'hoverImg', 'data-img'=>$author->img)) }} @else <i class="fa fa-unlink"></i> @endif </td>
                             <td>{{ str_limit($author->text, 30) }}</td>
                             <td>{{ $author->created_at }}</td>
                             <td>{{ $author->updated_at }}</td>

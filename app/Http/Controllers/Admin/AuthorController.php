@@ -52,7 +52,7 @@ class AuthorController extends Controller
             $image = $request->file('img');
             $request->file('img')->move( $path, $imgName);
             $image = Author::find($id);
-            $image->img = $imgName;
+            $image->image = $imgName;
             $image->save();
         }
 

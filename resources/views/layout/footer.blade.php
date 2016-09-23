@@ -11,11 +11,15 @@
                         @foreach($quotations as $quotation)
                             <div class="media">
                                 <div class="pull-left">
-                                    <a href="#"><img src="/images/home/profile1.png" alt=""></a>
+                                    @if($quotation->author->image)
+                                        <a href="#">{{ Html::image('/upload/authors/'.$quotation->author->image, 'alt', array( 'width' => 81, 'height' => 81, 'class'=>'img-thumbnail')) }}</a>
+                                    @else
+                                        <a href="#"><img class="img-thumbnail" src="/images/home/profile1.png" alt=""></a>
+                                    @endif
                                 </div>
                                 <div class="media-body">
                                     <blockquote>{{ $quotation->text }}</blockquote>
-                                    <h3><a href="#">- {{ $quotation->author }} </a></h3>
+                                    <h3><a href="#">- {{ $quotation->author->first_name . " " . $quotation->author->middle_name . " " . $quotation->author->last_name }} </a></h3>
                                 </div>
                             </div>
                         @endforeach

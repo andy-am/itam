@@ -68,6 +68,9 @@ Route::group(['middleware' => 'web'], function() {
             Route::post('administration/newsletter/{id}', 'NewsletterController@updateNewsletter');
             Route::delete('administration/newsletter/delete/{id}', 'NewsletterController@deleteNewsletter');
 
+            Route::post('administration/newsletter/hide/{id}', 'NewsletterController@doHideNewsletter');
+            Route::post('administration/newsletter/show/{id}', 'NewsletterController@doShowNewsletter');
+
             //////////////////////// END NEWSLETTER /////////////////////////////
 
 
@@ -79,6 +82,9 @@ Route::group(['middleware' => 'web'], function() {
             Route::get('administration/quotation/{id}', 'QuotationController@showQuotation');
             Route::post('administration/quotation/{id}', 'QuotationController@updateQuotation');
             Route::delete('administration/quotation/delete/{id}', 'QuotationController@deleteQuotation');
+
+            Route::post('administration/quotation/hide/{id}', 'QuotationController@doHideQuotation');
+            Route::post('administration/quotation/show/{id}', 'QuotationController@doShowQuotation');
 
             //////////////////////// END QUOTATION /////////////////////////////
 
