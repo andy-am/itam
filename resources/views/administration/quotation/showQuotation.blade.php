@@ -4,11 +4,11 @@
 
     <section class="content-header" xmlns="http://www.w3.org/1999/html">
         <h1>
-            Admin <small>Show quotation with id: {{ $quotation->id }}</small>
+            Admin <small>Edit The Quotation</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Show quotation with id: {{ $quotation->id }}</li>
+            <li class="active">Edit The Quotation</li>
         </ol>
     </section>
 
@@ -20,51 +20,49 @@
         <div class="box box-solid">
 
             <div class="box-body">
+
                 <div class="row">
 
-                    {{ Form::model($quotation, ['action' => ['Admin\AdminController@updateQuotation', $quotation->id], 'method' => 'put']) }}
+                    {{ Form::model($quotation, ['action' => ['Admin\QuotationController@updateQuotation', $quotation->id], 'method' => 'post']) }}
 
-                        <div class="form-group col-md-6">
+                    <div class="form-group col-md-6">
 
-                            {!! Form::label('Name of author', 'Name of Author') !!}
-
-                            {!! Form::text('author', null, [
-                                'class' => 'form-control',
-                                'placeholder' => 'Name of author',
-                                'required' => 'true'
-                            ]) !!}
-                        </div>
+                        {!! Form::label('Author of Quotation', 'Author of Quotation') !!}
 
 
-                        <div class="form-group col-md-12">
+                        <select name="author_id" class="form-control">
+                            @foreach($authors as $author)
+                                <option value="{{ $author->id }}" @if($author->id == $quotation->author_id ) selected="selected" @endif>{{ $author->first_name . " " .$author->middle_name . " " . $author->last_name }}</option>
+                            @endforeach
+                        </select>
 
-                            {!! Form::label('text', 'Text of quotation') !!}
+                    </div>
 
-                            {!! Form::textarea('text', null, [
-                                'rows' => '10',
-                                'class' => 'form-control',
-                                'placeholder' => 'Text of quotation',
-                                'required' => 'true'
-                            ]) !!}
-                        </div>
+                    <div class="form-group col-md-12">
 
-                        <div class="form-group col-md-12">
-                            @if ($quotation->img)
-                            {{ Html::image('/upload/quotations/'.$quotation->img, 'alt', array( 'width' => 425, 'height' => 200, 'class'=>'hoverImg', 'data-img'=>$quotation->img)) }}
-                            @else
-                                <i class="fa fa-unlink"></i>
-                            @endif
-                        </div>
+                        {!! Form::label('text', 'Text of Quotation') !!}
+
+                        {!! Form::textarea('text', null, [
+                        'rows' => '10',
+                        'class' => 'form-control',
+                        'placeholder' => 'Quotation',
+                        'required' => 'true'
+                        ]) !!}
+                    </div>
 
 
+                    {{--<div class="form-group">
+                        {!! Form::label('Image') !!}
+                        {!! Form::file('img', null) !!}
+                    </div>--}}
 
-                        <div class="form-group col-md-12">
-                            {!! Form::button('<i class="glyphicon glyphicon-ok-circle"></i> Update', [
-                                'type' => 'submit',
-                                'class' => 'form-control btn btn-success',
-                            ]) !!}
+                    <div class="form-group col-md-12">
+                        {!! Form::button('<i class="glyphicon glyphicon-ok-circle"></i> Save', [
+                        'type' => 'submit',
+                        'class' => 'form-control btn btn-success',
+                        ]) !!}
 
-                        </div>
+                    </div>
                     {{ Form::close() }}
                 </div>
 

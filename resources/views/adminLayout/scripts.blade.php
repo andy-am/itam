@@ -24,14 +24,9 @@
 
 {{ Html::script("/admin/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}
 
+{{ Html::script("/admin/js/modals/modals.js") }}
+
 {{--{{ Html::script("/admin/js/plugins/moris/moris.js") }}
 {{ Html::script("/admin/js/plugins/moris/moris.min.js") }}--}}
 
 @yield('scripts')
-
-
-
-
-
-
-

@@ -53,7 +53,7 @@
 
                                 <a href="{{ url('/') }}"><span class="label label-info" title="Detail"><i class="fa fa-folder-open-o"></i></span></a>
                                 <a href="{{ url('/administration/quotation/delete/'.$quotation->id) }}"><span class="label label-danger" title="Remove"><i class="fa fa-trash-o"></i></span></a>
-
+                                <a href="#" data-type="quotation" data-id="{{ $quotation->id }}" class="call-delete-entity-modal" type="button" data-toggle="modal" data-target="#myModal"><span class="label label-danger" title="Remove"><i class="fa fa-trash-o"></i></span></a>
                                 {{-- <span class="label label-primary">Primary</span>
                                  <span class="label label-success">Success</span>
                                  <span class="label label-info">Info</span>

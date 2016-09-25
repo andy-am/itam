@@ -85,7 +85,8 @@ class QuotationController extends Controller
     public function showQuotation($id)
     {
         $quotation = Quotation::findOrFail($id);
-        return view('administration.quotation.showQuotation')->with('quotation', $quotation);
+        $authors = Author::all();
+        return view('administration.quotation.showQuotation')->with('quotation', $quotation)->with('authors', $authors);
     }
 
     public function deleteQuotation($id)

@@ -28,7 +28,7 @@
                                 <li><!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="/images/admin/img/avatar3.png" class="img-circle" alt="User Image"/>
+                                            {{ Html::image('/photo/me.jpg', 'alt',[ 'class'=>'img-circle' ]) }}
                                         </div>
                                         <h4>
                                             Support Team
@@ -211,7 +211,7 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                            <img src="/images/admin/img/avatar3.png" class="img-circle" alt="User Image" />
+                            {{ Html::image('/photo/me.jpg', 'alt',[ 'class'=>'img-circle' ]) }}
                             <p>
                                 {{ Auth::user()->first_name . " " . Auth::user()->last_name }}
                                 <small>Registrovaný od:  {{  date('d.m.Y', strtotime(Auth::user()->created_at)) }}</small>
