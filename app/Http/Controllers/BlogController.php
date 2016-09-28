@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+//use App\Http\Controllers\Admin\BaseController;
+use Faker\Provider\Base;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

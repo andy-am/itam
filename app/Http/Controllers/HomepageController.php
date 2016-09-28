@@ -27,7 +27,7 @@ class HomepageController extends Controller
      */
     public function index(Request $request)
     {
-        $data = @unserialize(file_get_contents('http://ip-api.com/php/'));
+       /* $data = @unserialize(file_get_contents('http://ip-api.com/php/'));
         $visit = new Visit;
         $visit->browser = $request->server('HTTP_USER_AGENT');
         $visit->city = $data['city'];
@@ -35,7 +35,7 @@ class HomepageController extends Controller
         $visit->country_code = $data['countryCode'];
         $visit->continent = "CONTINENT";
         $visit->continent_code = "CONTINENT_CODE";
-        $visit->save();
+        $visit->save();*/
 
         return view('homepage.index');// ->with("quotations", $quotations);
 

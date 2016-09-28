@@ -36,6 +36,7 @@ class Controller extends BaseController
         view()->share('A_quotations', $A_quotations);
 
         $quotations = Quotation::all();
+        //dump($quotations);
         $quotations = (count($quotations) > 1) ? $quotations->random(2) : $quotations;
         view()->share('quotations', $quotations);
 
